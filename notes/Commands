@@ -1,0 +1,28 @@
+Cmd to build the docker image
+docker build -t "IMAGE_NAME:TAG" .
+
+Cmd to stop all running container
+docker stop $(docker ps -a -q)
+
+Cmd to erase all the container in host
+docker container prune -f
+
+Cmd to erase multiple image
+docker rmi IMAGE_ID IMAGE_ID
+
+Cmd to run the docker image
+docker run -it --name IMAGE_NAME -p (Internal)PORT_NO:(External)PORT_NO -d IMAGE_NAME:TAG
+
+docker run -it --name IMAGE_NAME -p (Internal)PORT_NO:(External)PORT_NO -d IMAGE_NAME:TAG /bin/bash - To execute internaly without full function
+
+docker run -dit --name IMAGE_NAME -p(Internal)PORT_NO:(External)PORT_NO -d   -v 'MOUNTING_VOLUME'  IMAGE_NAME:TAG
+
+
+Cmd to execute shell based of the docker container
+docker exec -it CONTAINER_ID /bin/bash
+
+Cmd to see all the running docker container 
+docker ps
+
+Cmd to copy the files from host to docker container
+docker cp CONTAINER_ID:PATH HOST_PATH
